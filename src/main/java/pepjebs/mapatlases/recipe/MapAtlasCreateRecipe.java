@@ -66,7 +66,7 @@ public class MapAtlasCreateRecipe extends SpecialRecipe {
         }
         MapData mapState = FilledMapItem.getData(mapItemStack, Minecraft.getInstance().world);
         if (mapState == null) return ItemStack.EMPTY;
-        Item mapAtlasItem = Registry.ITEM.getOrDefault(new ResourceLocation(MapAtlasesMod.MOD_ID, "atlas"));
+        Item mapAtlasItem = MapAtlasesMod.getAtlasItem();
         CompoundNBT compoundTag = new CompoundNBT();
         compoundTag.putIntArray("maps", new int[]{MapAtlasesAccessUtils.getMapIntFromState(mapState)});
         ItemStack atlasItemStack = new ItemStack(mapAtlasItem);
